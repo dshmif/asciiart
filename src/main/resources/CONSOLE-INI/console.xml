@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<console-app>
+	
+	<title>AsciiArt Console</title>
+	<prompt>art</prompt>
+	
+	<executor>
+		<exe-class>com.abstractthis.asciiart.core.AsciiArtExecutor</exe-class>
+		<command-config>CONSOLE-INI/commands/commands.xml</command-config>
+	</executor>
+	
+</console-app>

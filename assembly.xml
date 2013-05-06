@@ -1,0 +1,37 @@
+<assembly>
+	<id>distro</id>
+	
+	<!-- Define the format of the final assembly -->
+	<formats>
+		<format>zip</format>
+	</formats>
+	
+	<!-- Make is so all the project dependencies are contained in the final assembly -->
+	<dependencySets>
+		<dependencySet>
+			<!-- Don't put this projects jar in the libs dir -->
+			<useProjectArtifact>false</useProjectArtifact>
+			<outputDirectory>libs</outputDirectory>
+			<unpack>false</unpack>
+		</dependencySet>
+	</dependencySets>
+	
+	<fileSets>
+		<!-- Add directory to place ascii art files -->
+		<fileSet>
+			<directory>${basedir}/art</directory>
+			<outputDirectory>art</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>
+		<!-- Place the projects jar in the root -->
+		<fileSet>
+			<directory>${project.build.directory}</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>*.jar</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>
